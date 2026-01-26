@@ -1,0 +1,294 @@
+/* DEEP OCEAN THEME (Professional & Clean) */
+:root {
+    /* LIGHT MODE (Default) */
+    --bg-color: #f8fafc;       /* Very light cool grey */
+    --bg-gradient: linear-gradient(to bottom, #eff6ff, #f8fafc); /* Subtle blue tint at top */
+    --surface: #ffffff;        /* Pure white cards */
+    --border: #e2e8f0;         /* Light grey borders */
+    
+    --text-primary: #0f172a;   /* Dark Navy (instead of harsh black) */
+    --text-secondary: #64748b; /* Cool grey text */
+    
+    --accent: #0284c7;         /* Sky Blue (Primary Brand Color) */
+    --accent-bg: #e0f2fe;      /* Very faint blue for backgrounds */
+    
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Lato', sans-serif;
+}
+
+/* DARK MODE OVERRIDES */
+[data-theme="dark"] {
+    --bg-color: #0f172a;       /* Deep Navy Blue */
+    --bg-gradient: radial-gradient(circle at 50% 0%, #1e293b 0%, #0f172a 70%);
+    --surface: #1e293b;        /* Lighter Navy for cards */
+    --border: #334155;         /* Muted blue-grey border */
+    
+    --text-primary: #f1f5f9;   /* Off-white */
+    --text-secondary: #94a3b8; /* Soft blue-grey */
+    
+    --accent: #38bdf8;         /* Cyan/Teal (Pops on dark background) */
+    --accent-bg: rgba(56, 189, 248, 0.1); /* Faint teal glow */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: var(--bg-gradient);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    line-height: 1.7;
+    padding: 3rem 1rem;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* THEME TOGGLE BUTTON */
+.theme-btn {
+    position: absolute;
+    top: -20px;
+    right: 0;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.theme-btn:hover {
+    background: var(--accent-bg);
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* HEADER */
+header {
+    margin-bottom: 5rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Soft shadow */
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-family: var(--font-heading);
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.tagline {
+    font-size: 0.95rem;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.summary {
+    max-width: 600px;
+    margin: 0 auto 2.5rem auto;
+    color: var(--text-secondary);
+}
+
+/* BUTTONS */
+.links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    text-decoration: none;
+    border-radius: 6px; /* Slightly squared for a "tech" look */
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+/* Primary "Resume" Button */
+.btn:not(.btn-outline) {
+    background-color: var(--accent);
+    color: #fff; /* Always white text on blue button */
+}
+
+/* Dark mode tweak for button text if needed */
+[data-theme="dark"] .btn:not(.btn-outline) {
+    color: #0f172a; /* Dark text on bright teal button */
+}
+
+.btn:not(.btn-outline):hover {
+    filter: brightness(110%); /* Make it slightly brighter on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px var(--accent-bg);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* SECTIONS */
+section {
+    margin-bottom: 5rem;
+}
+
+h3 {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--accent); /* Blue bar on the left */
+    padding-left: 1rem;
+    display: block;
+}
+
+/* SKILLS */
+.skill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.skill-tag {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.skill-tag:hover {
+    background-color: var(--accent-bg);
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* CARDS */
+.project-card {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    padding: 2rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+/* Hover Effect: Lift up slightly */
+.project-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--accent);
+    box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.project-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    color: var(--text-primary);
+}
+
+.date-badge {
+    font-size: 0.8rem;
+    color: var(--accent);
+    background-color: var(--accent-bg);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.tech-stack {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    font-family: 'Fira Code', monospace;
+    margin-bottom: 1.2rem;
+}
+
+/* LISTS */
+.job-details {
+    list-style: none;
+}
+
+.job-details li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.6rem;
+    color: var(--text-primary);
+    opacity: 0.9;
+}
+
+.job-details li::before {
+    content: "•"; /* Simple dot */
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 1.2rem;
+    line-height: 1rem;
+}
+
+footer {
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+    padding-top: 2rem;
+    margin-top: 4rem;
+}
+/* PROFILE IMAGE STYLES */
+.profile-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes it a perfect circle */
+    object-fit: cover;  /* Prevents the image from stretching/squishing */
+    
+    /* Theme-aware border and shadow */
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 20px var(--accent-bg);
+    
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05); /* Slightly grows on hover */
+    box-shadow: 0 0 30px var(--accent); /* Brighter glow */
+}

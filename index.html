@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna Gadde | System Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container">
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">🌙 Dark Mode</button>
+        <header>
+            <img src="profile.jpg" alt="Krishna Gadde" class="profile-img">
+            <h1>Krishna Gadde</h1>
+            <h2 class="tagline">System Engineer & AWS Certified Solutions Architect</h2>
+            <p class="summary">
+                Results-driven engineer with 4 years of experience in cloud operations, automation, and support. 
+                Specializing in building robust AWS solutions, infrastructure optimization, and CI/CD pipelines.
+            </p>
+            <div class="links">
+                <a href="Krishna_AWS.pdf" download class="btn">📄 Download Resume</a>
+                <a href="mailto:krishnagadde151998@gmail.com" class="btn">Email Me</a>
+                <a href="https://www.linkedin.com/in/krishnagadde" target="_blank" class="btn btn-outline">LinkedIn</a>
+                <a href="https://github.com/krishnagadde151998" target="_blank" class="btn btn-outline">GitHub</a>
+            </div>
+        </header>
+
+        <section id="skills">
+            <h3>Technical Arsenal</h3>
+            <div class="skill-grid">
+                <span class="skill-tag">AWS (EC2, Lambda, S3)</span>
+                <span class="skill-tag">Terraform (IaC)</span>
+                <span class="skill-tag">Docker & Kubernetes</span>
+                <span class="skill-tag">CI/CD (Jenkins, CodePipeline)</span>
+                <span class="skill-tag">Shell Scripting</span>
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Monitoring (CloudWatch, Grafana)</span>
+            </div>
+        </section>
+
+        <section id="work">
+    <h3>Professional Experience</h3>
+    
+    <div class="project-card">
+        <div class="card-header">
+            <h4>System Engineer @ TCS</h4>
+            <span class="date-badge">March 2023 - Present</span>
+        </div>
+        <p class="tech-stack">Stack: AWS, Power Automate, Shell Scripting, CI/CD</p>
+        <ul class="job-details">
+            <li>Implemented Power Automate flows to notify Teams of AWS Step Functions failures, reducing incident detection time by ~80%.</li>
+            <li>Managed CI/CD pipelines using AWS CodeCommit and CodeBuild to automate deployments.</li>
+            <li>Created Bash scripts to automate repetitive system administration tasks and minimize downtime.</li>
+            <li>Provided production support for insurance applications migrated to AWS.</li>
+        </ul>
+    </div>
+
+    <div class="project-card">
+        <div class="card-header">
+            <h4>Application Development Associate @ Accenture</h4>
+            <span class="date-badge">Jan 2021 - March 2023</span>
+        </div>
+        <p class="tech-stack">Stack: Terraform, Jenkins, AWS (EC2, S3, ELB), Mainframe</p>
+        <ul class="job-details">
+            <li>Provisioned infrastructure using Terraform (IaC) and automated builds via Jenkins.</li>
+            <li>Configured Auto Scaling and ELB to distribute traffic and ensure high availability for EC2 instances.</li>
+            <li>Resolved 98% of incidents within SLA using CloudWatch and Grafana for monitoring.</li>
+            <li>Developed a solution to prevent duplicate orders, significantly improving data accuracy.</li>
+        </ul>
+    </div>
+</section>
+
+        <footer>
+            <p>&copy; 2026 Krishna Gadde. Built with code, deployed on AWS.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+<script>
+    const toggleBtn = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    // Check for saved user preference
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+        body.setAttribute('data-theme', currentTheme);
+        if (currentTheme === 'dark') toggleBtn.textContent = '☀️ Light Mode';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+        if (body.getAttribute('data-theme') === 'dark') {
+            body.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+            toggleBtn.textContent = '🌙 Dark Mode';
+        } else {
+            body.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+            toggleBtn.textContent = '☀️ Light Mode';
+        }
+    });
+</script>
