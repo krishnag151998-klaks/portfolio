@@ -1,0 +1,33 @@
+name: Deploy Portfolio to AWS S3
+
+# TRIGGER: When to run this pipeline?
+on:
+  push:
+    branches:
+      - main  # Runs every time you push code to the 'main' branch
+
+# PERMISSIONS: Allow the action to read your code
+permissions:
+  contents: read
+
+jobs:
+  deploy-to-s3:
+    runs-on: ubuntu-latest  # Uses a virtual Linux machine provided by GitHub
+
+    steps:
+      # Step 1: Download your code from the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Step 2: Login to AWS using the Secrets you saved earlier
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      # Step 3: Copy files from GitHub to your S3 Bucket
+      - name: Deploy to S3
+        run: |
+          aws s3 sync . s3://${{ secrets.S3_BUCKET_NAME }} --delete --exclude ".git/*" --exclude ".github/*" --exclude "*.tf" --exclude "*.tfstate*"
