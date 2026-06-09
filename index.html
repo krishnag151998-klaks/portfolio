@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Krishna Gadde | AWS Solutions Architect</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&family=Fira+Code&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@700&family=Fira+Code&display=swap"
+        rel="stylesheet">
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -28,16 +32,17 @@
                 <h1>Krishna Gadde</h1>
                 <h2 class="tagline">System Engineer & AWS Certified Solutions Architect</h2>
                 <p class="summary">
-                    Results-driven engineer with 4 years of experience in cloud operations, automation, and support. 
+                    Results-driven engineer with 4 years of experience in cloud operations, automation, and support.
                     Specializing in building robust AWS solutions, infrastructure optimization, and CI/CD pipelines.
                 </p>
                 <div class="hero-buttons">
                     <a href="Krishna_AWS.pdf" target="_blank" class="btn">📄 Download Resume</a>
                     <a href="mailto:krishnagadde151998@gmail.com" class="btn btn-outline">✉️ Contact Me</a>
                 </div>
-                
+
                 <div class="social-links" style="margin-top: 1.5rem;">
-                    <a href="https://www.linkedin.com/in/krishna-gadde-072469154/" target="_blank" class="social-icon">LinkedIn</a>
+                    <a href="https://www.linkedin.com/in/krishna-gadde-072469154/" target="_blank"
+                        class="social-icon">LinkedIn</a>
                     <span style="margin: 0 10px; color: var(--text-secondary);">|</span>
                     <a href="https://github.com/krishnagadde151998" target="_blank" class="social-icon">GitHub</a>
                 </div>
@@ -47,7 +52,8 @@
         <section id="architecture" class="arch-section">
             <h3>🚀 How This Site Works</h3>
             <p style="text-align:center; color: var(--text-secondary); margin-bottom: 1rem;">
-                This portfolio is a serverless production workload. It follows a GitOps workflow where infrastructure is provisioned via Terraform and code is deployed via GitHub Actions.
+                This portfolio is a serverless production workload. It follows a GitOps workflow where infrastructure is
+                provisioned via Terraform and code is deployed via GitHub Actions.
             </p>
             <div class="mermaid-container">
                 <div class="mermaid">
@@ -56,7 +62,7 @@
                     B -- Triggers --> C[⚙️ GitHub Actions]
                     C -- Deploys --> D[☁️ AWS S3]
                     D -- Serves --> E[🌍 Global Users]
-                    
+
                     style A fill:#e0f2fe,stroke:#0284c7,stroke-width:2px
                     style B fill:#f1f5f9,stroke:#334155,stroke-width:2px
                     style C fill:#dcfce7,stroke:#16a34a,stroke-width:2px
@@ -67,7 +73,7 @@
 
         <section id="experience">
             <h3>Professional Experience</h3>
-            
+
             <div class="project-card">
                 <div class="card-header">
                     <h4>System Engineer</h4>
@@ -76,9 +82,11 @@
                 <p class="company">Tata Consultancy Services (TCS)</p>
                 <p class="tech-stack">Stack: AWS, Power Automate, Shell Scripting, CI/CD</p>
                 <ul class="job-details">
-                    <li>Implemented Power Automate flows to notify Teams of AWS Step Functions failures, reducing incident detection time by ~80%.</li>
+                    <li>Implemented Power Automate flows to notify Teams of AWS Step Functions failures, reducing
+                        incident detection time by ~80%.</li>
                     <li>Managed CI/CD pipelines using AWS CodeCommit and CodeBuild to automate deployments.</li>
-                    <li>Created Bash scripts to automate repetitive system administration tasks and minimize downtime.</li>
+                    <li>Created Bash scripts to automate repetitive system administration tasks and minimize downtime.
+                    </li>
                     <li>Provided production support for insurance applications migrated to AWS.</li>
                 </ul>
             </div>
@@ -88,11 +96,12 @@
                     <h4>Application Development Associate</h4>
                     <span class="date-badge">Jan 2021 - March 2023</span>
                 </div>
-                <p class="company">Accenture</p>
+                <p class="company">Accenture Pvt Ltd</p>
                 <p class="tech-stack">Stack: Terraform, Jenkins, AWS (EC2, S3, ELB), Mainframe</p>
                 <ul class="job-details">
                     <li>Provisioned infrastructure using Terraform (IaC) and automated builds via Jenkins.</li>
-                    <li>Configured Auto Scaling and ELB to distribute traffic and ensure high availability for EC2 instances.</li>
+                    <li>Configured Auto Scaling and ELB to distribute traffic and ensure high availability for EC2
+                        instances.</li>
                     <li>Resolved 98% of incidents within SLA using CloudWatch and Grafana for monitoring.</li>
                     <li>Developed a solution to prevent duplicate orders, significantly improving data accuracy.</li>
                 </ul>
@@ -152,33 +161,34 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('active');
-                    observer.unobserve(entry.target); 
+                    observer.unobserve(entry.target);
                 }
             });
         }, { threshold: 0.15 });
 
         revealElements.forEach(el => {
-            el.classList.add('reveal'); 
+            el.classList.add('reveal');
             revealObserver.observe(el);
         });
 
         /* 3. TYPEWRITER EFFECT */
         const taglineElement = document.querySelector('.tagline');
         const originalText = taglineElement.innerText;
-        taglineElement.innerText = ''; 
-        taglineElement.classList.add('typing-cursor'); 
+        taglineElement.innerText = '';
+        taglineElement.classList.add('typing-cursor');
 
         let i = 0;
         function typeWriter() {
             if (i < originalText.length) {
                 taglineElement.innerText += originalText.charAt(i);
                 i++;
-                setTimeout(typeWriter, 40); 
+                setTimeout(typeWriter, 40);
             } else {
-                taglineElement.classList.remove('typing-cursor'); 
+                taglineElement.classList.remove('typing-cursor');
             }
         }
         setTimeout(typeWriter, 800); 
     </script>
 </body>
+
 </html>
