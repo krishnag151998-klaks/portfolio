@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Krishna Gadde | AWS Cloud Systems Engineer</title>
+    <title>Krishna Gadde | Cloud Engineer</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Fira+Code&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Fira+Code&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -20,7 +20,7 @@
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
-                <a href="#education">Education & Certs</a>
+                <a href="#certifications">Certifications</a>
                 <a href="#skills">Skills</a>
             </div>
             <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
@@ -37,17 +37,15 @@
                     <div class="glow-ring"></div>
                 </div>
                 <h1 class="gradient-text">Krishna Gadde</h1>
-                <h2 class="tagline">AWS Cloud Systems Engineer</h2>
+                <h2 class="tagline">Cloud Engineer</h2>
                 <p class="summary">
                     5 years of experience managing robust cloud ecosystems for global enterprises. Specializing in AWS workloads, infrastructure optimization, automated workflows, and ensuring maximum reliability through advanced CI/CD pipelines.
                 </p>
                 <div class="hero-buttons">
-                    <a href="Krishna_Gadde_AWS.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-file-pdf"></i> Download Resume</a>
+                    <a href="Krishna_Gadde_AWS.pdf" target="_blank" class="btn btn-primary"><i class="fas fa-file-pdf"></i> Resume</a>
                     <a href="mailto:krishnagadde151998@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact Me</a>
-                </div>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/krishna-gadde-072469154/" target="_blank" class="social-icon"><i class="fab fa-linkedin"></i> LinkedIn</a>
-                    <a href="https://github.com/krishnagadde151998" target="_blank" class="social-icon"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://www.linkedin.com/in/krishna-gadde-072469154/" target="_blank" class="btn btn-social" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/krishnagadde151998" target="_blank" class="btn btn-social" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
             </div>
         </header>
@@ -57,18 +55,20 @@
             <div class="glass-card mermaid-container">
                 <div class="mermaid">
                     graph LR
-                    A[Code Commit] -->|Push| B[GitHub Repo]
-                    B -->|Trigger| C[GitHub Actions]
-                    C -->|Deploy| D[AWS S3 / CloudFront]
-                    D -->|Serve| E[Global Users]
+                    A[Developer] -->|Push Code| B[AWS CodeCommit]
+                    B -->|Trigger Build| C[Jenkins / CodeBuild]
+                    C -->|Terraform Apply| D[AWS Infrastructure]
+                    D -->|Deploy App| E[EC2 / ASG / S3]
 
-                    classDef blue fill:#3b82f6,stroke:#1d4ed8,stroke-width:2px,color:#fff;
-                    classDef green fill:#10b981,stroke:#047857,stroke-width:2px,color:#fff;
-                    classDef orange fill:#f97316,stroke:#c2410c,stroke-width:2px,color:#fff;
+                    classDef blue fill:#a78bfa,stroke:#7c3aed,stroke-width:2px,color:#fff;
+                    classDef green fill:#818cf8,stroke:#4f46e5,stroke-width:2px,color:#fff;
+                    classDef orange fill:#f472b6,stroke:#db2777,stroke-width:2px,color:#fff;
+                    classDef default fill:#38bdf8,stroke:#0284c7,stroke-width:2px,color:#fff;
                     
-                    class A,B blue;
-                    class C green;
-                    class D,E orange;
+                    class A default;
+                    class B,C blue;
+                    class D green;
+                    class E orange;
                 </div>
             </div>
         </section>
@@ -83,10 +83,10 @@
                     </div>
                     <p class="company"><i class="fas fa-building"></i> Tata Consultancy Services (TCS) | Hyderabad</p>
                     <ul class="job-details">
-                        <li>Implemented Power Automate flow to proactively notify Teams channels of AWS Step Functions failures, decreasing incident detection time by ~80%.</li>
-                        <li>Configured S3 Versioning, Lifecycle Policies, and Cross-Region Replication for data durability and cost optimization.</li>
-                        <li>Automated CI/CD deployments using AWS CodeCommit, CodeBuild, Jenkins, and Terraform.</li>
-                        <li>Monitored AWS services using CloudWatch, Grafana, and Kibana to maintain critical application availability.</li>
+                        <li>Implemented a Power Automate flow to proactively notify Teams channels of AWS Step Functions failures, decreasing incident detection time by ~80% and ensuring smoother operational visibility.</li>
+                        <li>Configured S3 Versioning, Lifecycle Policies, and Cross-Region Replication to guarantee data durability, compliance, and optimize enterprise storage costs.</li>
+                        <li>Architected and automated CI/CD deployments leveraging AWS CodeCommit, CodeBuild, Jenkins, and Terraform (IaC) to streamline the release pipeline.</li>
+                        <li>Monitored mission-critical AWS services using CloudWatch, Grafana, and Kibana to proactively maintain application availability and rapid incident response.</li>
                     </ul>
                 </div>
 
@@ -97,82 +97,59 @@
                     </div>
                     <p class="company"><i class="fas fa-building"></i> Accenture | Hyderabad</p>
                     <ul class="job-details">
-                        <li>Resolved 98% of incidents within SLA using CloudWatch, Grafana, and Kibana.</li>
-                        <li>Provisioned EC2, S3, and ELB infrastructure via Terraform (IaC) and Jenkins.</li>
-                        <li>Developed a solution to prevent duplicate orders, enhancing data accuracy and customer satisfaction.</li>
-                        <li>Configured Auto Scaling Groups and Elastic Load Balancers to distribute traffic and ensure high availability.</li>
+                        <li>Resolved 98% of incidents within SLA using advanced monitoring through CloudWatch, Grafana, and Kibana across large-scale deployments.</li>
+                        <li>Provisioned scalable EC2, S3, and ELB infrastructure via Terraform (IaC) and Jenkins, achieving zero-downtime infrastructure updates.</li>
+                        <li>Developed a sophisticated order-processing solution to identify and prevent duplicate orders, enhancing data accuracy and boosting customer satisfaction.</li>
+                        <li>Configured robust Auto Scaling Groups and Elastic Load Balancers to distribute dynamic traffic and ensure highly available applications.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
-        <section id="education" class="reveal">
-            <h3 class="section-title">Education & Certifications</h3>
-            <div class="grid-2">
-                <div class="glass-card info-card">
-                    <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
-                    <h4>Education</h4>
-                    <div class="edu-item">
-                        <strong>B.Tech in Electronics and Communication</strong>
-                        <p>Karunya Institute of Technology and Sciences (May 2020) • CGPA: 8.12/10</p>
-                    </div>
-                    <div class="edu-item">
-                        <strong>Intermediate</strong>
-                        <p>Vignan Co-operative Jr college (May 2016) • 96.3%</p>
-                    </div>
-                    <div class="edu-item">
-                        <strong>High School</strong>
-                        <p>Sri Sai High School - Ponnekallu (April 2014) • CGPA: 9.5</p>
-                    </div>
+        <section id="certifications" class="reveal">
+            <h3 class="section-title">Certifications & Accomplishments</h3>
+            <div class="glass-card info-card single-card">
+                <div class="card-icon"><i class="fas fa-award"></i></div>
+                <div class="edu-item highlight">
+                    <strong>AWS Solutions Architect Associate</strong>
+                    <p>Amazon Web Services</p>
                 </div>
-
-                <div class="glass-card info-card">
-                    <div class="card-icon"><i class="fas fa-certificate"></i></div>
-                    <h4>Certifications & Accomplishments</h4>
-                    <div class="edu-item highlight">
-                        <strong>AWS Solutions Architect Associate</strong>
-                        <p>Amazon Web Services</p>
-                    </div>
-                    <div class="edu-item">
-                        <strong>Publication (IEEE Xplore)</strong>
-                        <p>Double Balanced Mixer with noise reduction for RF Receiver using Cadence 180nm Technology</p>
-                    </div>
+                <div class="edu-item">
+                    <strong>Publication (IEEE Xplore)</strong>
+                    <p>Double Balanced Mixer with noise reduction for RF Receiver using Cadence 180nm Technology</p>
                 </div>
             </div>
         </section>
 
         <section id="skills" class="reveal">
             <h3 class="section-title">Technical Arsenal</h3>
-            <div class="glass-card skills-container">
-                <div class="skill-category">
+            <div class="grid-3">
+                <div class="glass-card skill-box">
+                    <div class="skill-icon"><i class="fab fa-aws"></i></div>
                     <h4>Cloud (AWS)</h4>
-                    <div class="skill-tags">
-                        <span>EC2</span><span>S3</span><span>Lambda</span><span>Step Functions</span><span>CloudWatch</span><span>ELB</span><span>Auto Scaling</span><span>IAM</span>
-                    </div>
+                    <p>EC2, S3, Lambda, Step Functions, CloudWatch, ELB, Auto Scaling, IAM</p>
                 </div>
-                <div class="skill-category">
+                <div class="glass-card skill-box">
+                    <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
                     <h4>DevOps & CI/CD</h4>
-                    <div class="skill-tags">
-                        <span>CodeCommit</span><span>CodeBuild</span><span>CodePipeline</span><span>CodeDeploy</span><span>Docker</span><span>Jenkins</span><span>Terraform</span><span>Git</span>
-                    </div>
+                    <p>CodeCommit, CodeBuild, CodePipeline, Docker, Jenkins, Terraform, Git</p>
                 </div>
-                <div class="skill-category">
+                <div class="glass-card skill-box">
+                    <div class="skill-icon"><i class="fas fa-terminal"></i></div>
                     <h4>Systems & Scripting</h4>
-                    <div class="skill-tags">
-                        <span>Linux</span><span>Bash Scripting</span><span>Power Automate</span><span>JIRA</span><span>ServiceNow</span>
-                    </div>
+                    <p>Linux, Bash Scripting, Power Automate, JIRA, ServiceNow</p>
                 </div>
             </div>
         </section>
 
         <footer class="glass">
-            <p>© 2026 Krishna Gadde. Engineered with AWS and Glassmorphism.</p>
+            <p>© 2026 Krishna Gadde. Engineered with Soft Glassmorphism.</p>
         </footer>
     </div>
 
     <script type="module">
         import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
-        mermaid.initialize({ startOnLoad: true, theme: 'dark', background: 'transparent' });
+        mermaid.initialize({ startOnLoad: true, theme: 'base', themeVariables: { primaryColor: '#f4f4f5', edgeLabelBackground: '#18181b', clusterBkg: 'none', clusterBorder: 'none'}, background: 'transparent' });
     </script>
 
     <script>
@@ -224,12 +201,12 @@
             if (i < text.length) {
                 tagline.innerText += text.charAt(i);
                 i++;
-                setTimeout(typeWriter, 50);
+                setTimeout(typeWriter, 40);
             } else {
                 tagline.classList.remove('typing');
             }
         }
-        setTimeout(typeWriter, 500);
+        setTimeout(typeWriter, 400);
     </script>
 </body>
 </html>
