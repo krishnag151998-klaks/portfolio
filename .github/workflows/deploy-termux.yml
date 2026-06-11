@@ -9,37 +9,22 @@ permissions:
   contents: read
 
 jobs:
-  deploy:
-    # Runs DIRECTLY on your Android phone (no SSH needed!)
-    runs-on: [self-hosted, android, arm64]
+  notify:
+    # Runs on GitHub's servers — just validates the push happened
+    runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout latest code
       - name: Checkout Code
         uses: actions/checkout@v4
 
-      # 2. Pull latest code into portfolio folder inside Debian
-      - name: Pull Latest Code
+      - name: Trigger Webhook Deploy
         run: |
-          cd /root/portfolio
-          git fetch origin main
-          git reset --hard origin/main
-          echo "✅ Code updated to: $(git log -1 --oneline)"
-
-      # 3. Reload nginx (no restart needed — just reload config)
-      - name: Reload nginx
-        run: |
-          nginx -s reload
-          echo "✅ nginx reloaded"
-
-      # 4. Smoke test — confirm site is up
-      - name: Smoke Test
-        run: |
-          sleep 2
-          STATUS=$(curl -s -o /dev/null -w "%{http_code}" http://localhost:8080)
-          if [ "$STATUS" = "200" ]; then
-            echo "✅ Site is live! HTTP $STATUS"
-          else
-            echo "❌ Site returned HTTP $STATUS"
-            exit 1
-          fi
+          echo "✅ Push received — triggering webhook on Android phone..."
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-Hub-Signature-256: sha256=$(echo -n '{}' | openssl dgst -sha256 -hmac '${{ secrets.WEBHOOK_SECRET }}' | awk '{print $2}')" \
+            -d '{}' \
+            https://deploy.gkchosting.dpdns.org/deploy || echo "000")
+          echo "Webhook response: $RESPONSE"
+          echo "🚀 Deployment triggered!"
