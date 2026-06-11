@@ -1,30 +1,30 @@
 :root {
-    /* Soft Dark Theme (Default) */
-    --bg-base: #18181b;
-    --bg-grad-1: #27272a;
-    --bg-grad-2: #18181b;
-    --glass-bg: rgba(255, 255, 255, 0.04);
-    --glass-border: rgba(255, 255, 255, 0.06);
-    --glass-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2);
-    --text-main: #f4f4f5;
-    --text-muted: #a1a1aa;
-    --accent-1: #a78bfa; /* Soft Purple */
-    --accent-2: #818cf8; /* Soft Indigo */
-    --card-hover: rgba(255, 255, 255, 0.08);
+    /* Dark Theme (Ash Grey & Yellow) */
+    --bg-base: #2a2d30;
+    --bg-grad-1: #383c40;
+    --bg-grad-2: #1e2022;
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.3);
+    --text-main: #f8fafc;
+    --text-muted: #cbd5e1;
+    --accent-1: #facc15; /* Yellow */
+    --accent-2: #fef08a; /* Light Yellow */
+    --card-hover: rgba(255, 255, 255, 0.1);
 }
 
 [data-theme="light"] {
-    /* Soft Light Theme */
-    --bg-base: #fafafa;
-    --bg-grad-1: #f3f4f6;
-    --bg-grad-2: #fafafa;
-    --glass-bg: rgba(255, 255, 255, 0.8);
+    /* Light Theme (Ash Grey & Yellow) */
+    --bg-base: #f0f2f5;
+    --bg-grad-1: #e2e4e8;
+    --bg-grad-2: #ffffff;
+    --glass-bg: rgba(255, 255, 255, 0.7);
     --glass-border: rgba(0, 0, 0, 0.05);
-    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.03);
-    --text-main: #27272a;
-    --text-muted: #52525b;
-    --accent-1: #8b5cf6; /* Deeper Purple for light mode */
-    --accent-2: #6366f1; /* Deeper Indigo for light mode */
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    --text-main: #334155;
+    --text-muted: #64748b;
+    --accent-1: #d97706; /* Amber/Dark Yellow */
+    --accent-2: #facc15; /* Yellow */
     --card-hover: rgba(255, 255, 255, 1);
 }
 
@@ -41,13 +41,13 @@ body {
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 
-/* Dynamic Background Shapes (Softened) */
+/* Dynamic Background Shapes */
 .bg-shape {
     position: absolute;
     border-radius: 50%;
     filter: blur(100px);
     z-index: -1;
-    opacity: 0.3;
+    opacity: 0.15;
     animation: drift 25s infinite alternate;
 }
 
@@ -66,7 +66,7 @@ body {
 
 .shape-3 {
     width: 400px; height: 400px;
-    background: #f472b6; /* Soft pink */
+    background: #fbbf24;
     bottom: -150px; left: 10%;
     animation-delay: -10s;
 }
@@ -96,7 +96,7 @@ body {
 .glass-card:hover {
     background: var(--card-hover);
     transform: translateY(-4px);
-    border-color: rgba(167, 139, 250, 0.3); /* Subtle accent border */
+    border-color: rgba(250, 204, 21, 0.3); /* Yellow accent border */
 }
 
 /* Navigation */
@@ -179,14 +179,14 @@ body {
     border-radius: 50%;
     background: linear-gradient(45deg, var(--accent-1), var(--accent-2));
     filter: blur(25px);
-    opacity: 0.3;
+    opacity: 0.2;
     z-index: 1;
     animation: pulse 5s infinite alternate;
 }
 
 @keyframes pulse {
-    0% { transform: scale(1); opacity: 0.3; }
-    100% { transform: scale(1.05); opacity: 0.5; }
+    0% { transform: scale(1); opacity: 0.2; }
+    100% { transform: scale(1.05); opacity: 0.4; }
 }
 
 .gradient-text {
@@ -232,19 +232,19 @@ body {
     justify-content: center;
     gap: 0.6rem;
     transition: all 0.3s;
-    height: 50px; /* Force same height */
+    height: 50px;
 }
 
 .btn-primary {
     background: linear-gradient(45deg, var(--accent-1), var(--accent-2));
-    color: #fff;
+    color: #1a1a1a; /* Dark text for yellow button readability */
     border: none;
-    box-shadow: 0 4px 15px rgba(167, 139, 250, 0.2);
+    box-shadow: 0 4px 15px rgba(250, 204, 21, 0.2);
 }
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(167, 139, 250, 0.4);
+    box-shadow: 0 6px 20px rgba(250, 204, 21, 0.4);
 }
 
 .btn-outline {
@@ -314,7 +314,7 @@ body {
 .card-header h4 { font-size: 1.4rem; font-weight: 700; color: var(--text-main); }
 
 .date-badge {
-    background: rgba(167, 139, 250, 0.1);
+    background: rgba(250, 204, 21, 0.1);
     color: var(--accent-1);
     padding: 0.4rem 1rem;
     border-radius: 20px;
@@ -323,7 +323,7 @@ body {
 }
 
 .company {
-    color: var(--accent-2);
+    color: var(--text-main);
     font-weight: 500;
     margin-bottom: 1.2rem;
     display: flex; align-items: center; gap: 0.6rem;
@@ -379,9 +379,9 @@ body {
 
 .skill-icon {
     font-size: 2.5rem;
-    color: var(--accent-2);
+    color: var(--accent-1);
     margin-bottom: 1.2rem;
-    background: rgba(167, 139, 250, 0.1);
+    background: rgba(250, 204, 21, 0.1);
     width: 70px; height: 70px;
     display: flex; align-items: center; justify-content: center;
     border-radius: 50%;
